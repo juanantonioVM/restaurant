@@ -1,6 +1,23 @@
-@extends('layouts.main')
+@extends('layouts.mainAdmin')
 @section('content')
-<h1>Esta es la vista de administrador</h1>
-<a href="javascript: document.getElementById('logout').submit()" class="btn btn-sm btn-outline-danger">Cerrar Sesión</a>
-<form id="logout" action="{{route('logout')}}" method="POST" style="display:none">@csrf</form>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 py-4">
+            <div class="card"  style="width: 500px;">
+                <img src="{{ asset('images/banners/chef.jpg') }}" alt="Productos" class="rounded">
+                    <div class="card-img-overlay">
+                    <a href="{{ route('admin.productos') }}" class="btn btn-success d-grid">Ver productos</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 py-4">
+            <div class="card"  style="width: 500px;">
+                <img src="{{ asset('images/banners/productos.jpg') }}" alt="Productos" class="rounded">
+                    <div class="card-img-overlay">
+                    <a href="{{ route('categorias.index') }}" class="btn btn-success d-grid">Ver categorías</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
