@@ -25,6 +25,6 @@ Route::middleware('auth')->group(function (){
 });
 
 // Ruta para la vista pública del menú
-Route::get('menu', 'ProductController@index')->name('menu.index');
+Route::get('menu', 'CategoryController@vistaPubli')->name('menu.index');
 
 Auth::routes();

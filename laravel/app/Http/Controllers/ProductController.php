@@ -9,11 +9,6 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-        public function index() {
-                $productos = Product::all();
-                return view('menu.index', compact('productos'));
-        }
-
         public function admin() {
                 return view('admin.adminHome');
         }
@@ -49,7 +44,7 @@ class ProductController extends Controller
         
                 $producto->save();
         
-                $producto->categorias()->sync($request->categorias);
+                $producto->categories()->sync($request->categorias);
         
                 return redirect()->route('admin.productos')->with('success', 'Producto creado correctamente.');
         }

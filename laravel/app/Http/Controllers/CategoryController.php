@@ -44,4 +44,16 @@ class CategoryController extends Controller {
         $category->delete();
         return redirect()->route('categorias.index')->with('success', 'Categoría eliminada correctamente.');
     }
+
+    public function vistaPubli(Request $request) {
+        $query = $request->input('search');
+    
+        $categorias = Category::with(['productos' => function ($q) use ($query) {
+            if ($query) {
+                $q->where('nombre', 'like', "%{$query}%");
+            }
+        }])->get();
+    
+        return view('menu.index', compact('categorias', 'query'));
+    }
 }

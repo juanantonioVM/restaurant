@@ -30,24 +30,24 @@ class ProductSeeder extends Seeder
 
         $productos = [
             // Bebidas
-            ['nombre' => 'Coca-Cola', 'descripcion' => 'Bebida gaseosa refrescante', 'precio' => 2.50, 'imagen' => null, 'categoria' => 'Bebidas'],
-            ['nombre' => 'Fanta de Naranja', 'descripcion' => 'Bebida gaseosa refrescante', 'precio' => 2.50, 'imagen' => null, 'categoria' => 'Bebidas'],
-            ['nombre' => 'Agua', 'descripcion' => 'Mineral', 'precio' => 1.50, 'imagen' => null, 'categoria' => 'Bebidas'],
+            ['nombre' => 'Coca-Cola', 'descripcion' => 'Bebida gaseosa refrescante', 'precio' => 2.50, 'imagen' => 'productos/cocacola.jpg', 'categoria' => 'Bebidas'],
+            ['nombre' => 'Fanta de Naranja', 'descripcion' => 'Bebida gaseosa refrescante', 'precio' => 2.50, 'imagen' => 'productos/fanta.jpg', 'categoria' => 'Bebidas'],
+            ['nombre' => 'Agua', 'descripcion' => 'Mineral', 'precio' => 1.50, 'imagen' => 'productos/agua.jpg', 'categoria' => 'Bebidas'],
 
             // Entrantes
-            ['nombre' => 'Bruschetta', 'descripcion' => 'Pan tostado con tomate y albahaca', 'precio' => 4.50, 'imagen' => null, 'categoria' => 'Entrantes'],
-            ['nombre' => 'Croquetas Caseras', 'descripcion' => 'Crujientes croquetas de jamón', 'precio' => 5.50, 'imagen' => null, 'categoria' => 'Entrantes'],
-            ['nombre' => 'Ensalada César', 'descripcion' => 'Lechuga con pollo y aderezo César', 'precio' => 6.00, 'imagen' => null, 'categoria' => 'Entrantes'],
+            ['nombre' => 'Bruschetta', 'descripcion' => 'Pan tostado con tomate y albahaca', 'precio' => 4.50, 'imagen' => 'productos/bruschetta.jpg', 'categoria' => 'Entrantes'],
+            ['nombre' => 'Croquetas Caseras', 'descripcion' => 'Crujientes croquetas de jamón', 'precio' => 5.50, 'imagen' => 'productos/croquetas.jpeg', 'categoria' => 'Entrantes'],
+            ['nombre' => 'Ensalada César', 'descripcion' => 'Lechuga con pollo y aderezo César', 'precio' => 6.00, 'imagen' => 'productos/cesar.jpg', 'categoria' => 'Entrantes'],
 
             // Platos principales
-            ['nombre' => 'Pizza Margarita', 'descripcion' => 'Pizza con tomate, mozzarella y albahaca', 'precio' => 10.50, 'imagen' => null, 'categoria' => 'Platos principales'],
-            ['nombre' => 'Hamburguesa Clásica', 'descripcion' => 'Hamburguesa con queso y lechuga', 'precio' => 8.99, 'imagen' => null, 'categoria' => 'Platos principales'],
-            ['nombre' => 'Pasta Carbonara', 'descripcion' => 'Pasta con salsa de nata y bacon', 'precio' => 9.50, 'imagen' => null, 'categoria' => 'Platos principales'],
+            ['nombre' => 'Pizza Margarita', 'descripcion' => 'Pizza con tomate, mozzarella y albahaca', 'precio' => 10.50, 'imagen' => 'productos/pizza.jpg', 'categoria' => 'Platos principales'],
+            ['nombre' => 'Hamburguesa Clásica', 'descripcion' => 'Hamburguesa con queso y lechuga', 'precio' => 9.00, 'imagen' => 'productos/burguer.jpg', 'categoria' => 'Platos principales'],
+            ['nombre' => 'Pasta Carbonara', 'descripcion' => 'Pasta con salsa de nata y bacon', 'precio' => 9.50, 'imagen' => 'productos/carbonara.jpg', 'categoria' => 'Platos principales'],
 
             // Postres
-            ['nombre' => 'Tarta de Chocolate', 'descripcion' => 'Delicioso pastel de chocolate', 'precio' => 5.99, 'imagen' => null, 'categoria' => 'Postres'],
-            ['nombre' => 'Helado de Vainilla', 'descripcion' => 'Helado cremoso de vainilla', 'precio' => 4.00, 'imagen' => null, 'categoria' => 'Postres'],
-            ['nombre' => 'Flan Casero', 'descripcion' => 'Flan con caramelo', 'precio' => 3.50, 'imagen' => null, 'categoria' => 'Postres'],
+            ['nombre' => 'Tarta de Chocolate', 'descripcion' => 'Delicioso pastel de chocolate', 'precio' => 6.00, 'imagen' => 'productos/tarta.jpg', 'categoria' => 'Postres'],
+            ['nombre' => 'Helado de Vainilla', 'descripcion' => 'Helado cremoso de vainilla', 'precio' => 4.00, 'imagen' => 'productos/helado.jpg', 'categoria' => 'Postres'],
+            ['nombre' => 'Flan Casero', 'descripcion' => 'Flan con caramelo', 'precio' => 3.50, 'imagen' => 'productos/flan.jpg', 'categoria' => 'Postres'],
         ];
 
         foreach ($productos as $producto) {
