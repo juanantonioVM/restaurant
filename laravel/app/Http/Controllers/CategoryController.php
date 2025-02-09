@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Anuncio;
 
 class CategoryController extends Controller {
     public function index() {
@@ -53,7 +54,9 @@ class CategoryController extends Controller {
                 $q->where('nombre', 'like', "%{$query}%");
             }
         }])->get();
+
+        $anuncios = Anuncio::activos()->get();
     
-        return view('menu.index', compact('categorias', 'query'));
+        return view('menu.index', compact('categorias', 'query', 'anuncios'));
     }
 }

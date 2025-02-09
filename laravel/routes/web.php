@@ -22,9 +22,19 @@ Route::middleware('auth')->group(function (){
     Route::put('admin/categorias/{categoria}', 'CategoryController@update')->name('categorias.update');
     Route::delete('admin/categorias/{categoria}', 'CategoryController@destroy')->name('categorias.destroy');
 
+    // Rutas para las operaciones CRUD de anuncios en el administrador
+    Route::get('admin/anuncios', 'AnuncioController@index')->name('anuncios.index');
+    Route::get('admin/anuncios/create', 'AnuncioController@create')->name('anuncios.create');
+    Route::post('admin/anuncios', 'AnuncioController@store')->name('anuncios.store');
+    Route::get('admin/anuncios/{anuncio}/edit', 'AnuncioController@edit')->name('anuncios.edit');
+    Route::put('admin/anuncios/{anuncio}', 'AnuncioController@update')->name('anuncios.update');
+    Route::delete('admin/anuncios/{anuncio}', 'AnuncioController@destroy')->name('anuncios.destroy');
+
 });
 
 // Ruta para la vista pública del menú
 Route::get('menu', 'CategoryController@vistaPubli')->name('menu.index');
+
+Route::get('/activity', 'ProductController@updatedActivity');
 
 Auth::routes();
