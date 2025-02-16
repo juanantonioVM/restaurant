@@ -16,10 +16,14 @@ class CategorySeeder extends Seeder
     public function run()
     {
         $categorias = [
-            ['nombre' => 'Bebidas'],
+            ['nombre' => 'Hamburguesas'],
             ['nombre' => 'Entrantes'],
-            ['nombre' => 'Platos principales'],
+            ['nombre' => 'Zona vegana'],
+            ['nombre' => 'Infantil'],
             ['nombre' => 'Postres'],
+            ['nombre' => 'Cervezas'],
+            ['nombre' => 'Café y té'],
+            ['nombre' => 'Bebidas'],
         ];
 
         foreach ($categorias as $categoria) {

@@ -10,11 +10,9 @@ class Anuncio extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['titulo', 'mensaje', 'fecha_inicio', 'fecha_fin'];
+    protected $fillable = ['titulo', 'mensaje', 'fecha', 'inicio', 'fin', 'dia_semana', 'activo'];
 
     public function scopeActivos(Builder $q) {
-
-        return $q   ->whereDate('fecha_inicio', '<=', now())
-                    ->whereDate('fecha_fin', '>=', now());
+        return $q   ->where('activo', true);
     }
 }

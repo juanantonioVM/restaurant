@@ -17,8 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('titulo', 255);
             $table->text('mensaje');
-            $table->date('fecha_inicio');
-            $table->date('fecha_fin');
+            $table->date('fecha')->nullable();
+            $table->time('inicio')->nullable();
+            $table->time('fin')->nullable();
+            $table->integer('dia_semana')->nullable();
+            $table->boolean('activo')->default(false);
             $table->timestamps();
         });
     }

@@ -28,7 +28,7 @@
 
         <div class="mb-3">
             <label class="form-label">Categorías</label>
-            <select name="categorias[]" class="form-select" multiple required>
+            <select name="categorias[]" class="form-select" required>
                 @foreach($categorias as $categoria)
                     <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
                 @endforeach

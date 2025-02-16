@@ -28,8 +28,27 @@ class DesactivarAnunciosExpirados extends Command
      */
     public function handle()
     {
-        Anuncio::whereDate('fecha_fin', '<', now())->delete();
-        $this->info('Anuncios expirados eliminados.');
+        // Activa anuncios esporádicos
+        Anuncio::whereDate('fecha', now())
+            ->where('activo', '0')
+            ->update(['activo' => '1']);
 
+        // Desactiva anuncios esporádicos
+        Anuncio::whereDate('fecha', '<', now())
+            ->where('activo', '1')
+            ->update(['activo' => '0']);
+
+        // Activa anuncios recurrentes
+        Anuncio::where('dia_semana', now()->dayOfWeek)
+            ->whereTime('inicio', '<=', now())
+            ->whereTime('fin', '>=', now())
+            ->where('activo', '0')
+            ->update(['activo' => '1']);
+
+        // Desactiva anuncios recurrentes
+        Anuncio::where('dia_semana', now()->dayOfWeek)
+            ->whereTime('fin', '<', now())
+            ->where('activo', '1')
+            ->update(['activo' => '0']);
     }
 }

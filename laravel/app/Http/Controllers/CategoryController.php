@@ -55,7 +55,7 @@ class CategoryController extends Controller {
             }
         }])->get();
 
-        $anuncios = Anuncio::activos()->get();
+        $anuncios = Anuncio::where('activo', '1')->get();
     
         return view('menu.index', compact('categorias', 'query', 'anuncios'));
     }

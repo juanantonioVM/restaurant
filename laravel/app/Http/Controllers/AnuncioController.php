@@ -21,8 +21,10 @@ class AnuncioController extends Controller
         $request->validate([
             'titulo' => 'required|max:255',
             'mensaje' => 'required',
-            'fecha_inicio' => 'required|date',
-            'fecha_fin' => 'required|date|after:fecha_inicio',
+            'fecha' => 'nullable|date',
+            'dia_semana' => 'nullable|integer|between:0,6',
+            'inicio' => 'nullable|date_format:H:i',
+            'fin' => 'nullable|date_format:H:i|after:inicio',
         ]);
 
         $anuncio = Anuncio::create($request->all());
@@ -37,8 +39,18 @@ class AnuncioController extends Controller
         $text = "<b>NOVEDAD</b>\n";
         $text .= "<b>Título:</b> " . $anuncio->titulo . "\n";
         $text .= "<b>Mensaje:</b> " . $anuncio->mensaje . "\n";
-        $text .= "<b>Fecha Inicio:</b> " . $anuncio->fecha_inicio . "\n";
-        $text .= "<b>Fecha Fin:</b> " . $anuncio->fecha_fin . "\n";
+
+        if ($anuncio->dia_semana !== null) {
+            // Anuncio recurrente
+            $dias = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+            $text .= "<b>Se repite cada:</b> " . ucfirst($dias[$anuncio->dia_semana]) . "\n";
+            $text .= "<b>Hora de inicio:</b> " . date('H:i', strtotime($anuncio->inicio)) . "\n";
+            $text .= "<b>Hora de fin:</b> " . date('H:i', strtotime($anuncio->fin)) . "\n";
+        } else {
+            // Anuncio esporádico
+            $text .= "<b>Fecha Inicio:</b> " . date('d-m-Y H:i', strtotime($anuncio->inicio)) . "\n";
+            $text .= "<b>Fecha Fin:</b> " . date('d-m-Y H:i', strtotime($anuncio->fin)) . "\n";
+        }
 
         \Telegram::sendMessage([
                 'chat_id' => env('TELEGRAM_CHANNEL_ID', ''),
