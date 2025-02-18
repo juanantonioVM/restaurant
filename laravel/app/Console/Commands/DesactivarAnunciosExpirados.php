@@ -12,7 +12,7 @@ class DesactivarAnunciosExpirados extends Command
      *
      * @var string
      */
-    protected $signature = 'anuncios:desactivar';
+    protected $signature = 'anuncios:desactivar'; // NOMBRE DEL COMANDO PARA REFERENCIARLO EN KERNEL.PHP
 
     /**
      * The console command description.
@@ -28,24 +28,24 @@ class DesactivarAnunciosExpirados extends Command
      */
     public function handle()
     {
-        // Activa anuncios esporádicos
+        // ACTIVA ANUNCIOS ESPORADICOS
         Anuncio::whereDate('fecha', now())
             ->where('activo', '0')
             ->update(['activo' => '1']);
 
-        // Desactiva anuncios esporádicos
+        // DESACTIVA ANUNCIOS ESPORADICOS
         Anuncio::whereDate('fecha', '<', now())
             ->where('activo', '1')
             ->update(['activo' => '0']);
 
-        // Activa anuncios recurrentes
+        // ACTIVA ANUNCIOS RECURRENTES
         Anuncio::where('dia_semana', now()->dayOfWeek)
             ->whereTime('inicio', '<=', now())
             ->whereTime('fin', '>=', now())
             ->where('activo', '0')
             ->update(['activo' => '1']);
 
-        // Desactiva anuncios recurrentes
+        // DESACTIVA ANUNCIOS RECURRENTES
         Anuncio::where('dia_semana', now()->dayOfWeek)
             ->whereTime('fin', '<', now())
             ->where('activo', '1')

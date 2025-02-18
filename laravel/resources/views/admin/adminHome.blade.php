@@ -20,7 +20,7 @@
         </div>
         <div class="col-12 col-md-4 py-4">
             <div class="card">
-                <img src="{{ asset('images/banners/productos.jpg') }}" alt="Productos" class="rounded">
+                <img src="{{ asset('images/banners/anuncios.jpg') }}" alt="Productos" class="rounded">
                     <div class="card-img-overlay">
                     <a href="{{ route('anuncios.index') }}" class="btn btn-success d-grid">Ver anuncios</a>
                 </div>

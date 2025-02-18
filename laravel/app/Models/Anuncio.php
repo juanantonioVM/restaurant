@@ -10,9 +10,10 @@ class Anuncio extends Model
 {
     use HasFactory;
 
+    // CAMPOS DE LA TABLA ANUNCIOS
     protected $fillable = ['titulo', 'mensaje', 'fecha', 'inicio', 'fin', 'dia_semana', 'activo'];
 
     public function scopeActivos(Builder $q) {
-        return $q   ->where('activo', true);
+        return $q   ->where('activo', '1');
     }
 }

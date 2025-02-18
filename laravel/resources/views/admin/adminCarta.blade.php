@@ -1,16 +1,16 @@
 @extends('layouts.mainAdmin')
 @section('content')
 <div class="container mt-4">
-    <h2>Gestión de Productos</h2>
-    <a href="{{ route('productos.create') }}" class="btn btn-primary mb-3">Agregar Producto</a>
+    <h2 class="fuente-personalizada-titulo">Productos</h2>
+    <a href="{{ route('productos.create') }}" class="btn btn-success mb-3">Agregar Producto</a>
 
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
     @foreach($categorias as $categoria)
-        <h3>{{ $categoria->nombre }}</h3>
-        <table class="table table-striped">
+        <h3 class="fuente-personalizada-titulo">{{ $categoria->nombre }}</h3>
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th>Imagen</th>
@@ -38,7 +38,7 @@
                         <form action="{{ route('productos.destroy', $producto->id) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                            <button type="submit" class="btn btn-danger btn-sm mt-2 mt-xl-0">Eliminar</button>
                         </form>
                     </td>
                 </tr>

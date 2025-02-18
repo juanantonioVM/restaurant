@@ -17,10 +17,14 @@ class ProductSeeder extends Seeder
     public function run()
     {
         $categorias = [
-            'Bebidas' => Category::where('nombre', 'Bebidas')->first(),
+            'Hamburguesas' => Category::where('nombre', 'Hamburguesas')->first(),
             'Entrantes' => Category::where('nombre', 'Entrantes')->first(),
-            'Platos principales' => Category::where('nombre', 'Platos principales')->first(),
+            'Zona vegana' => Category::where('nombre', 'Zona vegana')->first(),
+            'Infantil' => Category::where('nombre', 'Infantil')->first(),
             'Postres' => Category::where('nombre', 'Postres')->first(),
+            'Cervezas' => Category::where('nombre', 'Cervezas')->first(),
+            'Bebidas' => Category::where('nombre', 'Bebidas')->first(),
+            'Cafes y tes' => Category::where('nombre', 'Cafes y tes')->first(),
         ];
 
         if (in_array(null, $categorias)) {
@@ -30,7 +34,7 @@ class ProductSeeder extends Seeder
 
         $productos = [
             // Hamburguesas
-            ['nombre' => 'Cheeseburger', 'descripcion' => 'Carne de ternera, queso cheddar, lechuga, tomate y salsa especial.', 'precio' => 10.50, 'imagen' => 'productos/cheeseburger.jpg', 'categoria' => 'Hamburguesas'],
+            ['nombre' => 'Cheeseburger', 'descripcion' => 'Carne de ternera, queso cheddar, lechuga, tomate y salsa especial.', 'precio' => 10.50, 'imagen' => 'productos/cheeseburguer.jpg', 'categoria' => 'Hamburguesas'],
             ['nombre' => 'Smash Burger', 'descripcion' => 'Doble carne de ternera, cebolla caramelizada, queso cheddar y mayonesa.', 'precio' => 12.00, 'imagen' => 'productos/smash.jpg', 'categoria' => 'Hamburguesas'],
             ['nombre' => 'BBQ Burger', 'descripcion' => 'Carne de ternera, bacon crujiente, queso cheddar y salsa BBQ.', 'precio' => 11.50, 'imagen' => 'productos/bbq.jpg', 'categoria' => 'Hamburguesas'],
             ['nombre' => 'Trufada', 'descripcion' => 'Carne de ternera, queso brie, rúcula y mayonesa de trufa.', 'precio' => 13.00, 'imagen' => 'productos/trufada.png', 'categoria' => 'Hamburguesas'],
@@ -46,24 +50,24 @@ class ProductSeeder extends Seeder
             ['nombre' => 'Gyozas', 'descripcion' => 'Empanadillas japonesas rellenas de pollo y verduras.', 'precio' => 6.00, 'imagen' => 'productos/gyozas.jpg', 'categoria' => 'Entrantes'],
         
             // Zona vegana
-            ['nombre' => 'Hamburguesa Vegana', 'descripcion' => 'Hamburguesa de soja con lechuga, tomate y mayonesa vegana.', 'precio' => 11.00, 'imagen' => 'productos/burguervegana.jpg', 'categoria' => 'Zona vegana'],
+            ['nombre' => 'Hamburguesa Vegana', 'descripcion' => 'Hamburguesa de soja con lechuga, tomate y mayonesa vegana.', 'precio' => 11.00, 'imagen' => 'productos/burguervegana.jpeg', 'categoria' => 'Zona vegana'],
             ['nombre' => 'Falafel', 'descripcion' => 'Bolitas de garbanzo con salsa de yogur.', 'precio' => 8.00, 'imagen' => 'productos/falafel.jpg', 'categoria' => 'Zona vegana'],
             ['nombre' => 'Ensalada de Quinoa', 'descripcion' => 'Quinoa con aguacate, tomate y vinagreta.', 'precio' => 9.00, 'imagen' => 'productos/quinoa.jpg', 'categoria' => 'Zona vegana'],
             ['nombre' => 'Bowl de Tofu', 'descripcion' => 'Tofu marinado con arroz y verduras.', 'precio' => 9.50, 'imagen' => 'productos/tofu.jpg', 'categoria' => 'Zona vegana'],
-            ['nombre' => 'Pasta Pesto Vegana', 'descripcion' => 'Pasta con pesto de albahaca sin queso.', 'precio' => 10.00, 'imagen' => 'productos/pesto.jpg', 'categoria' => 'Zona vegana'],
+            ['nombre' => 'Pasta Pesto Vegana', 'descripcion' => 'Pasta con pesto de albahaca sin queso.', 'precio' => 10.00, 'imagen' => 'productos/pesto.jpeg', 'categoria' => 'Zona vegana'],
             ['nombre' => 'Tacos Veganos', 'descripcion' => 'Tacos rellenos de proteína vegetal y verduras.', 'precio' => 10.50, 'imagen' => 'productos/tacosveganos.jpg', 'categoria' => 'Zona vegana'],
         
             // Infantil
             ['nombre' => 'Nuggets de Pollo', 'descripcion' => 'Nuggets de pollo con patatas.', 'precio' => 6.00, 'imagen' => 'productos/nuggets.jpg', 'categoria' => 'Infantil'],
             ['nombre' => 'Mini Burger', 'descripcion' => 'Mini hamburguesa con queso.', 'precio' => 5.50, 'imagen' => 'productos/miniburger.jpg', 'categoria' => 'Infantil'],
-            ['nombre' => 'Mac & Cheese', 'descripcion' => 'Macarrones con queso cremoso.', 'precio' => 6.50, 'imagen' => 'productos/mac.jpg', 'categoria' => 'Infantil'],
+            ['nombre' => 'Macarrones', 'descripcion' => 'Macarrones con queso cremoso.', 'precio' => 6.50, 'imagen' => 'productos/mac.jpg', 'categoria' => 'Infantil'],
             ['nombre' => 'Pizza Infantil', 'descripcion' => 'Mini pizza margarita.', 'precio' => 7.00, 'imagen' => 'productos/pizza_infantil.jpg', 'categoria' => 'Infantil'],
             ['nombre' => 'Sándwich Mixto', 'descripcion' => 'Sándwich de jamón y queso.', 'precio' => 4.50, 'imagen' => 'productos/sandwich.jpg', 'categoria' => 'Infantil'],
             ['nombre' => 'Hot Dog', 'descripcion' => 'Perrito caliente con ketchup y mostaza.', 'precio' => 5.00, 'imagen' => 'productos/hotdog.jpg', 'categoria' => 'Infantil'],
         
             // Postres
             ['nombre' => 'Tarta de Queso', 'descripcion' => 'Tarta de queso casera con frutos rojos.', 'precio' => 6.00, 'imagen' => 'productos/tartaqueso.jpg', 'categoria' => 'Postres'],
-            ['nombre' => 'Brownie con Helado', 'descripcion' => 'Brownie de chocolate con helado de vainilla.', 'precio' => 5.50, 'imagen' => 'productos/brownie.jpg', 'categoria' => 'Postres'],
+            ['nombre' => 'Brownie con Helado', 'descripcion' => 'Brownie de chocolate con helado de vainilla.', 'precio' => 5.50, 'imagen' => 'productos/brownie.png', 'categoria' => 'Postres'],
             ['nombre' => 'Tiramisú', 'descripcion' => 'Postre italiano con mascarpone y café.', 'precio' => 6.50, 'imagen' => 'productos/tiramisu.jpg', 'categoria' => 'Postres'],
             ['nombre' => 'Flan Casero', 'descripcion' => 'Flan con caramelo.', 'precio' => 4.00, 'imagen' => 'productos/flan.jpg', 'categoria' => 'Postres'],
             ['nombre' => 'Helado Variado', 'descripcion' => 'Selección de helados artesanales.', 'precio' => 4.50, 'imagen' => 'productos/helado.jpg', 'categoria' => 'Postres'],
@@ -72,39 +76,43 @@ class ProductSeeder extends Seeder
             // Cervezas
             ['nombre' => 'Mahou', 'descripcion' => 'Cerveza rubia española.', 'precio' => 3.00, 'imagen' => 'productos/mahou.jpg', 'categoria' => 'Cervezas'],
             ['nombre' => 'Heineken', 'descripcion' => 'Cerveza lager premium.', 'precio' => 3.50, 'imagen' => 'productos/heineken.jpg', 'categoria' => 'Cervezas'],
-            ['nombre' => 'Estrella Galicia', 'descripcion' => 'Cerveza artesanal gallega.', 'precio' => 3.50, 'imagen' => 'productos/estrella.jpg', 'categoria' => 'Cervezas'],
+            ['nombre' => 'Estrella Galicia', 'descripcion' => 'Cerveza artesanal gallega.', 'precio' => 3.50, 'imagen' => 'productos/estrella.png', 'categoria' => 'Cervezas'],
             ['nombre' => 'Corona', 'descripcion' => 'Cerveza mexicana suave con lima.', 'precio' => 4.00, 'imagen' => 'productos/corona.jpg', 'categoria' => 'Cervezas'],
             ['nombre' => 'Guinness', 'descripcion' => 'Cerveza negra irlandesa con sabor intenso.', 'precio' => 4.50, 'imagen' => 'productos/guinness.jpg', 'categoria' => 'Cervezas'],
-            ['nombre' => 'Paulaner', 'descripcion' => 'Cerveza de trigo alemana.', 'precio' => 4.50, 'imagen' => 'productos/paulaner.jpg', 'categoria' => 'Cervezas'],
+            ['nombre' => 'Paulaner', 'descripcion' => 'Cerveza de trigo alemana.', 'precio' => 4.50, 'imagen' => 'productos/paulaner.png', 'categoria' => 'Cervezas'],
 
             // Bebidas
             ['nombre' => 'Agua', 'descripcion' => 'Agua mineral natural.', 'precio' => 1.50, 'imagen' => 'productos/agua.jpg', 'categoria' => 'Bebidas'],
             ['nombre' => 'Coca-Cola', 'descripcion' => 'Refresco de cola original.', 'precio' => 2.50, 'imagen' => 'productos/cocacola.jpg', 'categoria' => 'Bebidas'],
-            ['nombre' => 'Fanta Naranja', 'descripcion' => 'Refresco de naranja.', 'precio' => 2.50, 'imagen' => 'productos/fanta.jpg', 'categoria' => 'Bebidas'],
+            ['nombre' => 'Fanta Naranja', 'descripcion' => 'Refresco de naranja.', 'precio' => 2.50, 'imagen' => 'productos/fanta.png', 'categoria' => 'Bebidas'],
             ['nombre' => 'Aquarius', 'descripcion' => 'Bebida isotónica con sabor a limón.', 'precio' => 2.50, 'imagen' => 'productos/aquarius.jpg', 'categoria' => 'Bebidas'],
             ['nombre' => 'Vino Tinto', 'descripcion' => 'Copa de vino tinto crianza.', 'precio' => 4.00, 'imagen' => 'productos/vinotinto.jpg', 'categoria' => 'Bebidas'],
             ['nombre' => 'Vino Blanco', 'descripcion' => 'Copa de vino blanco afrutado.', 'precio' => 4.00, 'imagen' => 'productos/vinoblanco.jpg', 'categoria' => 'Bebidas'],
 
             // Café y Té
-            ['nombre' => 'Café Solo', 'descripcion' => 'Espresso intenso.', 'precio' => 1.50, 'imagen' => 'productos/cafesolo.jpg', 'categoria' => 'Café y Té'],
-            ['nombre' => 'Café con Leche', 'descripcion' => 'Café con leche cremoso.', 'precio' => 1.80, 'imagen' => 'productos/cafeconleche.jpg', 'categoria' => 'Café y Té'],
-            ['nombre' => 'Cappuccino', 'descripcion' => 'Espresso con espuma de leche.', 'precio' => 2.50, 'imagen' => 'productos/cappuccino.jpg', 'categoria' => 'Café y Té'],
-            ['nombre' => 'Té Verde', 'descripcion' => 'Infusión de té verde antioxidante.', 'precio' => 2.00, 'imagen' => 'productos/teverde.jpg', 'categoria' => 'Café y Té'],
-            ['nombre' => 'Té Rojo', 'descripcion' => 'Infusión de té rojo digestivo.', 'precio' => 2.00, 'imagen' => 'productos/terojo.jpg', 'categoria' => 'Café y Té'],
-            ['nombre' => 'Manzanilla', 'descripcion' => 'Infusión relajante de manzanilla.', 'precio' => 2.00, 'imagen' => 'productos/manzanilla.jpg', 'categoria' => 'Café y Té'],
+            ['nombre' => 'Café Solo', 'descripcion' => 'Espresso intenso.', 'precio' => 1.50, 'imagen' => 'productos/cafesolo.jpg', 'categoria' => 'Cafes y tes'],
+            ['nombre' => 'Café con Leche', 'descripcion' => 'Café con leche cremoso.', 'precio' => 1.80, 'imagen' => 'productos/cafeconleche.jpg', 'categoria' => 'Cafes y tes'],
+            ['nombre' => 'Cappuccino', 'descripcion' => 'Espresso con espuma de leche.', 'precio' => 2.50, 'imagen' => 'productos/capuccino.png', 'categoria' => 'Cafes y tes'],
+            ['nombre' => 'Té Verde', 'descripcion' => 'Infusión de té verde antioxidante.', 'precio' => 2.00, 'imagen' => 'productos/teverde.jpg', 'categoria' => 'Cafes y tes'],
+            ['nombre' => 'Té Rojo', 'descripcion' => 'Infusión de té rojo digestivo.', 'precio' => 2.00, 'imagen' => 'productos/terojo.jpg', 'categoria' => 'Cafes y tes'],
+            ['nombre' => 'Manzanilla', 'descripcion' => 'Infusión relajante de manzanilla.', 'precio' => 2.00, 'imagen' => 'productos/manzanilla.jpg', 'categoria' => 'Cafes y tes'],
         ];
         
-
+        // ASIGNA EL ID DE LA CATEGORIA INDICADA EN EL SEEDER
         foreach ($productos as $producto) {
-            $nuevoProducto = Product::create([
-                'nombre' => $producto['nombre'],
-                'descripcion' => $producto['descripcion'],
-                'precio' => $producto['precio'],
-                'imagen' => $producto['imagen'],
-            ]);
-
-            $categoria = $categorias[$producto['categoria']];
-            $nuevoProducto->categories()->attach($categoria->id);
+            $categoria = $categorias[$producto['categoria']] ?? null;
+        
+            if ($categoria) {
+                Product::create([
+                    'nombre' => $producto['nombre'],
+                    'descripcion' => $producto['descripcion'],
+                    'precio' => $producto['precio'],
+                    'imagen' => $producto['imagen'],
+                    'category_id' => $categoria->id,
+                ]);
+            } else {
+                $this->command->warn("La categoría '{$producto['categoria']}' no existe en la base de datos.");
+            }
         }
     }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.mainAdmin')
 @section('content')
 <div class="container mt-4">
-    <h2>Editar Producto</h2>
+    <h2 class="fuente-personalizada-titulo">Editar Producto</h2>
 
     <form action="{{ route('productos.update', $producto->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -30,12 +30,25 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Cambiar Imagen (opcional)</label>
+            <label class="form-label">Cambiar Imagen</label>
             <input type="file" name="imagen" class="form-control">
         </div>
 
+        <div class="mb-3">
+            <label class="form-label">Cambiar de categoría</label>
+            <select name="category_id" class="form-select">
+                @foreach($categorias as $categoria)
+                    <option value="{{ $categoria->id }}" 
+                        @if($producto->category_id == $categoria->id) selected @endif>
+                        {{ $categoria->nombre }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
+
         <button type="submit" class="btn btn-success">Actualizar Producto</button>
-        <a href="{{ route('admin.home') }}" class="btn btn-secondary">Cancelar</a>
+        <a href="{{ route('admin.productos') }}" class="btn btn-secondary">Cancelar</a>
     </form>
 </div>
 @endsection

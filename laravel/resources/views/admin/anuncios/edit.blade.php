@@ -3,22 +3,47 @@
 @section('content')
 <div class="container mt-4">
     <h2>Editar Anuncio</h2>
+    <p style="font-size: small; color: red;">* Campos obligatorios</p>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Consideraciones:</strong> Para una promoción recurrente en el tiempo en el restaurante, no hace falta poner fecha, pero sí horario y día de la semana.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Consideraciones:</strong> Para una promoción de un día específico (esporádica), no hay que poner horario ni día de la semana, pero sí fecha.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
     <form action="{{ route('anuncios.update', $anuncio) }}" method="POST">
         @csrf
         @method('PUT')
-        <label>Título:</label>
-        <input type="text" name="titulo" value="{{ $anuncio->titulo }}" required>
 
-        <label>Mensaje:</label>
-        <textarea name="mensaje" required>{{ $anuncio->mensaje }}</textarea>
+        <label for="titulo" class="form-label">Título: *</label>
+        <input type="text" name="titulo" class="form-control" value="{{ $anuncio->titulo }}" required><br><br>
 
-        <label>Fecha de Inicio:</label>
-        <input type="date" name="fecha_inicio" value="{{ $anuncio->fecha_inicio }}" required>
+        <label for="mensaje" class="form-label">Mensaje: *</label>
+        <textarea name="mensaje" class="form-control" required>{{ $anuncio->mensaje }}</textarea><br><br>
 
-        <label>Fecha de Fin:</label>
-        <input type="date" name="fecha_fin" value="{{ $anuncio->fecha_fin }}" required>
+        <label for="fecha" class="form-label">Fecha de la promoción:</label>
+        <input type="date" name="fecha" class="form-control" value="{{ $anuncio->fecha }}"><br><br>
 
-        <button type="submit">Actualizar</button>
+        <label for="inicio" class="form-label">Hora de inicio:</label>
+        <input type="time" name="inicio" class="form-control" value="{{ $anuncio->inicio }}"><br><br>
+
+        <label for="fin" class="form-label">Hora de finalización:</label>
+        <input type="time" name="fin" class="form-control" value="{{ $anuncio->fin }}"><br><br>
+
+        <label for="dia_semana" class="form-label">Día de la semana que se aplica el descuento:</label>
+        <select id="dia_semana" name="dia_semana" class="form-control">
+            <option value="">Promoción esporádica</option>
+            <option value="1">Lunes</option>
+            <option value="2">Martes</option>
+            <option value="3">Miércoles</option>
+            <option value="4">Jueves</option>
+            <option value="5">Viernes</option>
+            <option value="6">Sábado</option>
+            <option value="0">Domingo</option>
+        </select><br><br>
+
+        <button class="btn btn-success mb-3" type="submit">Actualizar</button>
     </form>
 </div>
 @endsection

@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
+<!-- NAV BAR PÚBLICA -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
         <a class="navbar-brand fuente-personalizada-titulo" href="#">Meson Jimenez</a>
@@ -25,6 +26,7 @@
     </div>
 </nav>
 
+<!-- ANUNCIOS ACTIVOS -->
 @php
     $diasSemana = ['domingos', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábados'];
 @endphp
@@ -61,7 +63,7 @@
     </div>
 </div>
 
-
+<!-- PRODUCTOS ORGANIZADOS POR CATEGORÍAS Y EL BUSCADOR -->
 <div class="container mt-5">
     <h1 class="text-center mb-4 fuente-personalizada-titulo-3">🍽️ Carta</h1>
     <form action="{{ route('menu.index') }}" method="GET" class="mb-4">

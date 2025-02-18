@@ -22,8 +22,8 @@ class CategorySeeder extends Seeder
             ['nombre' => 'Infantil'],
             ['nombre' => 'Postres'],
             ['nombre' => 'Cervezas'],
-            ['nombre' => 'Café y té'],
             ['nombre' => 'Bebidas'],
+            ['nombre' => 'Cafes y tes'],
         ];
 
         foreach ($categorias as $categoria) {

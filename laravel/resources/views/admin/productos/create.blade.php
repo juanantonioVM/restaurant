@@ -1,7 +1,7 @@
 @extends('layouts.mainAdmin')
 @section('content')
 <div class="container mt-4">
-    <h2>Agregar Producto</h2>
+    <h2 class="fuente-personalizada-titulo">Agregar Producto</h2>
 
     <form action="{{ route('productos.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -22,7 +22,7 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Imagen (opcional)</label>
+            <label class="form-label">Imagen</label>
             <input type="file" name="imagen" class="form-control">
         </div>
 
@@ -38,7 +38,7 @@
 
         
         <button type="submit" class="btn btn-success">Guardar Producto</button>
-        <a href="{{ route('admin.home') }}" class="btn btn-secondary">Cancelar</a>
+        <a href="{{ route('admin.productos') }}" class="btn btn-secondary">Cancelar</a>
     </form>
 </div>
 

@@ -35,6 +35,7 @@ Route::middleware('auth')->group(function (){
 // Ruta para la vista pública del menú
 Route::get('menu', 'CategoryController@vistaPubli')->name('menu.index');
 
+// Ruta para enviar los anuncios por Telegram
 Route::get('/activity', 'ProductController@updatedActivity');
 
 Auth::routes();
